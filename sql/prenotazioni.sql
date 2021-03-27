@@ -26,6 +26,9 @@ CREATE TABLE `prenotazioni` (
   `id` int(11) NOT NULL,
   `codice_fiscale` varchar(45) NOT NULL,
   `giorno` date NOT NULL,
+  `codice_univoco` varchar(64) NOT NULL,
+  `eseguito` tinyint(1) NOT NULL DEFAULT 0,
+  `note` text DEFAULT NULL,
   PRIMARY KEY (`id`,`codice_fiscale`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -36,6 +39,7 @@ CREATE TABLE `prenotazioni` (
 
 LOCK TABLES `prenotazioni` WRITE;
 /*!40000 ALTER TABLE `prenotazioni` DISABLE KEYS */;
+INSERT INTO `prenotazioni` VALUES (1,'sdjsdhsj3456','2021-03-20','ABC',0,NULL),(2,'swssckme3124','2021-03-12','DEF',0,NULL);
 /*!40000 ALTER TABLE `prenotazioni` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-19 17:33:30
+-- Dump completed on 2021-03-27 11:32:09
